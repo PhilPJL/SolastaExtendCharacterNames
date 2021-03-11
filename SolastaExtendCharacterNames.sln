@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31105.61
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolastaExtendCharacterNames", "SolastaExtendCharacterNames\SolastaExtendCharacterNames.csproj", "{CAA312C3-B27E-43B1-A710-A4A55712688D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAA312C3-B27E-43B1-A710-A4A55712688D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAA312C3-B27E-43B1-A710-A4A55712688D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAA312C3-B27E-43B1-A710-A4A55712688D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAA312C3-B27E-43B1-A710-A4A55712688D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3DDCD516-3A12-4212-A1B0-C1EB45E9CE43}
+	EndGlobalSection
+EndGlobal
