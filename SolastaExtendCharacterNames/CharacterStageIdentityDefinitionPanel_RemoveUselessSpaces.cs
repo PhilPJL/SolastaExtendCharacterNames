@@ -15,11 +15,11 @@ namespace SolastaCharacterNameExtended
         {
             if (textField != null)
             {
-                // Solasta original code disallows invalid filename chars and a list of chars.
+                // Solasta original code disallows invalid filename chars and an additional list of illegal chars.
                 // We're disallowing invalid filename chars only.
-                // Also trimming whitespace from start only as per original method.
+                // We're trimming whitespace from start only as per original method.
                 // This allows the users to create a name with spaces inside, but also allows trailing space.
-                // Decided to remove spaces on save.
+                // Trailing spaces are removed on save.
                 textField.text = new string(
                     textField.text
                         .Where(n => !invalidFilenameChars.Contains(n))
