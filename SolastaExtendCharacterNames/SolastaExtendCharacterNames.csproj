@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CharacterPoolManager_SaveCharacter.cs" />
+    <Compile Include="CharacterStageIdentityDefinitionPanel_EnterStage.cs" />
     <Compile Include="CharacterStageIdentityDefinitionPanel_RemoveUselessSpaces.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

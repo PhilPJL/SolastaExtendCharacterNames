@@ -7,7 +7,7 @@ using TMPro;
 namespace SolastaCharacterNameExtended
 {
     [HarmonyPatch(typeof(CharacterStageIdentityDefinitionPanel), "RemoveUselessSpaces")]
-    static class CharacterStageIdentityDefinitionPanel_RemoveUselessSpaces
+    internal static class CharacterStageIdentityDefinitionPanel_RemoveUselessSpaces
     {
         private static readonly HashSet<char> invalidFilenameChars = new HashSet<char>(Path.GetInvalidFileNameChars());
 

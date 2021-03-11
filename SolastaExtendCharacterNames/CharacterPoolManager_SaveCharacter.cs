@@ -6,15 +6,19 @@ namespace SolastaExtendCharacterNames
     // Unfortunately characters are keyed on first name only throughout the codebase so not sensible
     // to try to make this change.
     [HarmonyPatch(typeof(CharacterPoolManager), "SaveCharacter")]
-    static class CharacterPoolManager_SaveCharacter
+    internal static class CharacterPoolManager_SaveCharacter
     {
-        public static void Prefix(RulesetCharacterHero heroCharacter, bool addToPool = false)
+        public static void Prefix(RulesetCharacterHero heroCharacter, [HarmonyArgument("addToPool")] bool _ = false)
         {
+            Main.Log("SaveCharacter:enter");
+
             if (heroCharacter != null)
             {
                 heroCharacter.SurName = heroCharacter.SurName?.Trim();
                 heroCharacter.Name = heroCharacter.Name?.Trim();
             }
+
+            Main.Log("SaveCharacter:leave");
         }
 #if false
         public static bool Prefix(CharacterPoolManager __instance, 
