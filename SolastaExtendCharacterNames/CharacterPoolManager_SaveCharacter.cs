@@ -1,6 +1,4 @@
 ﻿using HarmonyLib;
-using System.Collections.Generic;
-using System.IO;
 
 namespace SolastaExtendCharacterNames
 {
@@ -14,8 +12,6 @@ namespace SolastaExtendCharacterNames
         {
             if (heroCharacter != null)
             {
-                Main.Log("Trimming names on save");
-
                 heroCharacter.SurName = heroCharacter.SurName?.Trim();
                 heroCharacter.Name = heroCharacter.Name?.Trim();
             }
