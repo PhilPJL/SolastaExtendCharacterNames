@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using TMPro;
 
-namespace SolastaCharacterNameExtended
+namespace SolastaExtendCharacterNames
 {
     [HarmonyPatch(typeof(CharacterStageIdentityDefinitionPanel), "RemoveUselessSpaces")]
     internal static class CharacterStageIdentityDefinitionPanel_RemoveUselessSpaces
