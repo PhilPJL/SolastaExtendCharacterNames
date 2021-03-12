@@ -9,7 +9,7 @@ namespace SolastaExtendCharacterNames
     [HarmonyPatch(typeof(CharacterStageIdentityDefinitionPanel), "RemoveUselessSpaces")]
     internal static class CharacterStageIdentityDefinitionPanel_RemoveUselessSpaces
     {
-        private static readonly HashSet<char> invalidFilenameChars = new HashSet<char>(Path.GetInvalidFileNameChars());
+        private static readonly HashSet<char> InvalidFilenameChars = new HashSet<char>(Path.GetInvalidFileNameChars());
 
         public static bool Prefix(TMP_InputField textField)
         {
@@ -22,7 +22,7 @@ namespace SolastaExtendCharacterNames
                 // Trailing spaces are removed on save.
                 textField.text = new string(
                     textField.text
-                        .Where(n => !invalidFilenameChars.Contains(n))
+                        .Where(n => !InvalidFilenameChars.Contains(n))
                         .ToArray()).TrimStart();
 
                 return false;
