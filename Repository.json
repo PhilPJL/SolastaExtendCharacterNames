@@ -1,7 +1,7 @@
 {
     "Releases":
     [
-        {"Id": "SolastaExtendCharacterNames", "Version": "1.0.4", "DownloadUrl": "https://github.com/PhilPJL/SolastaExtendCharacterNames/releases/download/V1.0.4/SolastaExtendCharacterNames.zip"},
-        {"Id": "SolastaExtendCharacterNames", "Version": "1.0.5", "DownloadUrl": "https://github.com/PhilPJL/SolastaExtendCharacterNames/releases/download/V1.0.5/SolastaExtendCharacterNames.zip"}
+        {"Id": "SolastaExtendCharacterNames", "Version": "1.0.5", "DownloadUrl": "https://github.com/PhilPJL/SolastaExtendCharacterNames/releases/download/V1.0.5/SolastaExtendCharacterNames.zip"},
+        {"Id": "SolastaExtendCharacterNames", "Version": "1.0.4", "DownloadUrl": "https://github.com/PhilPJL/SolastaExtendCharacterNames/releases/download/V1.0.4/SolastaExtendCharacterNames.zip"}
     ]
 }
