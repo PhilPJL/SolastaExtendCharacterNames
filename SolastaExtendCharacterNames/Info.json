@@ -6,5 +6,7 @@
   "GameVersion": "0.4.21",
   "Id": "SolastaExtendCharacterNames",
   "ManagerVersion": "0.23.0",
-  "Version": "1.0.4"
+  "Version": "1.0.5",
+  "HomePage": "https://www.nexusmods.com/solastacrownofthemagister/mods/25",
+  "Repository": "https://raw.githubusercontent.com/PhilPJL/SolastaExtendCharacterNames/master/Repository.json"
 }
