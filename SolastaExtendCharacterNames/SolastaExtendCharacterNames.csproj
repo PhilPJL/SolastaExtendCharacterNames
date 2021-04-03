@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk" InitialTargets="CheckEnvironmentVars">
 
 	<PropertyGroup>
 		<TargetFrameworks>netframework472</TargetFrameworks>
@@ -11,37 +11,43 @@
 		<PackageProjectUrl>https://github.com/PhilPJL/SolastaExtendCharacterNames</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/PhilPJL/SolastaExtendCharacterNames</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<PackageReleaseNotes>Changed to modern project file format.
+		<PackageReleaseNotes>
+			Changed to modern project file format.
 		</PackageReleaseNotes>
 	</PropertyGroup>
 
+	<Target Name="CheckEnvironmentVars">
+		<Error Text="Please set the SolastaManaged environment variable." Condition="'$(SolastaManaged)' == ''" ContinueOnError="false"/>
+		<Error Text="Please set the UnityModManager environment variable." Condition="'$(UnityModManager)' == ''" ContinueOnError="false"/>
+	</Target>
+	
 	<ItemGroup>
 		<PackageReference Include="HarmonyX" Version="2.4.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<Reference Include="Assembly-CSharp">
-			<HintPath>D:\Program Files (x86)\SteamLibrary\steamapps\common\Slasta_COTM\Solasta_Data\Managed\Assembly-CSharp.dll</HintPath>
+			<HintPath>$([System.IO.Path]::Combine($(SolastaManaged), 'Assembly-CSharp.dll'))</HintPath>
 			<Private>false</Private>
 		</Reference>
 		<Reference Include="Unity.TextMeshPro">
-		  <HintPath>D:\Program Files (x86)\SteamLibrary\steamapps\common\Slasta_COTM\Solasta_Data\Managed\Unity.TextMeshPro.dll</HintPath>
-		  <Private>false</Private>
+			<HintPath>$([System.IO.Path]::Combine($(SolastaManaged), 'Unity.TextMeshPro.dll'))</HintPath>
+			<Private>false</Private>
 		</Reference>
-		<Reference Include="UnityEngine">
-		  <HintPath>..\..\unity-mod-manager\lib\UnityEngine.dll</HintPath>
-		  <Private>false</Private>
+		<Reference Include="UnityEngine.CoreModule">
+			<HintPath>$([System.IO.Path]::Combine($(SolastaManaged), 'UnityEngine.CoreModule.dll'))</HintPath>
+			<Private>false</Private>
 		</Reference>
 		<Reference Include="UnityEngine.UI">
-		  <HintPath>..\..\unity-mod-manager\lib\UnityEngine.UI.dll</HintPath>
-		  <Private>false</Private>
+			<HintPath>$([System.IO.Path]::Combine($(SolastaManaged), 'UnityEngine.UI.dll'))</HintPath>
+			<Private>false</Private>
 		</Reference>
 	</ItemGroup>
 
 	<ItemGroup>
 		<Reference Include="UnityModManager">
-			<HintPath>..\..\..\..\Documents\UnityModManager-21-0-23-1-1614426185\UnityModManager\UnityModManager.dll</HintPath>
-			<Private>true</Private>
+			<HintPath>$([System.IO.Path]::Combine($(UnityModManager), 'UnityModManager.dll'))</HintPath>
+			<Private>false</Private>
 		</Reference>
 	</ItemGroup>
 
@@ -52,7 +58,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Properties\" />
+		<Folder Include="Properties\" />
 	</ItemGroup>
 
 </Project>
