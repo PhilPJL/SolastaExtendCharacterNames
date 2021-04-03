@@ -8,3 +8,7 @@ I give no guarantee that TA aren't right in blocking those letters (aka glyphs),
 As an added bonus I'm trimming trailing spaces from the names.
 
 Available at: https://www.nexusmods.com/solastacrownofthemagister/mods/23
+
+Before opening the solution
+* Create the environment variable SolastaInstallDir = 'path to solasta', e.g. SolastaInstallDir = 'D:\Program Files (x86)\SteamLibrary\steamapps\common\Slasta_COTM'
+* Ensure UnityModManager 0.23 or later is configured for Solasta

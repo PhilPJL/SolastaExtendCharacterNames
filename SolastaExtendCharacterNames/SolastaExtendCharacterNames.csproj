@@ -17,36 +17,35 @@
 	</PropertyGroup>
 
 	<Target Name="CheckEnvironmentVars">
-		<Error Text="Please set the SolastaManaged environment variable." Condition="'$(SolastaManaged)' == ''" ContinueOnError="false"/>
-		<Error Text="Please set the UnityModManager environment variable." Condition="'$(UnityModManager)' == ''" ContinueOnError="false"/>
+		<Error Text="Please set the SolastaInstallDir environment variable." Condition="'$(SolastaInstallDir)' == ''" ContinueOnError="false" />
 	</Target>
-	
-	<ItemGroup>
-		<PackageReference Include="HarmonyX" Version="2.4.0" />
-	</ItemGroup>
 
 	<ItemGroup>
 		<Reference Include="Assembly-CSharp">
-			<HintPath>$([System.IO.Path]::Combine($(SolastaManaged), 'Assembly-CSharp.dll'))</HintPath>
+			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Solasta_Data\Managed\Assembly-CSharp.dll'))</HintPath>
 			<Private>false</Private>
 		</Reference>
 		<Reference Include="Unity.TextMeshPro">
-			<HintPath>$([System.IO.Path]::Combine($(SolastaManaged), 'Unity.TextMeshPro.dll'))</HintPath>
+			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Solasta_Data\Managed\Unity.TextMeshPro.dll'))</HintPath>
 			<Private>false</Private>
 		</Reference>
 		<Reference Include="UnityEngine.CoreModule">
-			<HintPath>$([System.IO.Path]::Combine($(SolastaManaged), 'UnityEngine.CoreModule.dll'))</HintPath>
+			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Solasta_Data\Managed\UnityEngine.CoreModule.dll'))</HintPath>
 			<Private>false</Private>
 		</Reference>
 		<Reference Include="UnityEngine.UI">
-			<HintPath>$([System.IO.Path]::Combine($(SolastaManaged), 'UnityEngine.UI.dll'))</HintPath>
+			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Solasta_Data\Managed\UnityEngine.UI.dll'))</HintPath>
 			<Private>false</Private>
 		</Reference>
 	</ItemGroup>
 
 	<ItemGroup>
 		<Reference Include="UnityModManager">
-			<HintPath>$([System.IO.Path]::Combine($(UnityModManager), 'UnityModManager.dll'))</HintPath>
+			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Solasta_Data\Managed\UnityModManager\UnityModManager.dll'))</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="0Harmony">
+			<HintPath>$([System.IO.Path]::Combine($(SolastaInstallDir), 'Solasta_Data\Managed\UnityModManager\0Harmony.dll'))</HintPath>
 			<Private>false</Private>
 		</Reference>
 	</ItemGroup>
@@ -55,10 +54,6 @@
 		<None Update="Info.json">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
-	</ItemGroup>
-
-	<ItemGroup>
-		<Folder Include="Properties\" />
 	</ItemGroup>
 
 </Project>
