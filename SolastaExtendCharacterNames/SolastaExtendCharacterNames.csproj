@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk" InitialTargets="CheckEnvironmentVars">
 
 	<PropertyGroup>
-		<TargetFrameworks>netframework472</TargetFrameworks>
+		<TargetFramework>net472</TargetFramework>
 		<Copyright>Copyright © ImpPhil 2021</Copyright>
 		<AssemblyVersion>1.1.0.0</AssemblyVersion>
 		<FileVersion>1.1.0.0</FileVersion>
@@ -55,5 +55,9 @@
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	  <Exec Command="copy &quot;$(TargetDir)*.*&quot; &quot;D:\Program Files (x86)\SteamLibrary\steamapps\common\Slasta_COTM\Mods\SolastaExtendCharacterNames&quot; /Y&#xD;&#xA;" />
+	</Target>
 
 </Project>
