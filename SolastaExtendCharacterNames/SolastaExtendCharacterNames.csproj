@@ -14,6 +14,13 @@
 		<PackageReleaseNotes>
 			Changed to modern project file format.
 		</PackageReleaseNotes>
+		<Configurations>Debug;Release;Debug Install;Release Install</Configurations>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug Install|AnyCPU' Or '$(Configuration)|$(Platform)' == 'Release Install|AnyCPU'">
+		<OutputPath>$(SolastaInstallDir)\Mods\SolastaExtendCharacterNames\</OutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 	</PropertyGroup>
 
 	<Target Name="CheckEnvironmentVars">
@@ -55,9 +62,5 @@
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
-
-	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-	  <Exec Command="copy &quot;$(TargetDir)*.*&quot; &quot;D:\Program Files (x86)\SteamLibrary\steamapps\common\Slasta_COTM\Mods\SolastaExtendCharacterNames&quot; /Y&#xD;&#xA;" />
-	</Target>
 
 </Project>
