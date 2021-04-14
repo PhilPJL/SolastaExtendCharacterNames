@@ -8,18 +8,17 @@ namespace SolastaExtendCharacterNames
     public class Main
     {
         [Conditional("DEBUG")]
-        public static void Log(string msg) => logger.Log(msg);
+        internal static void Log(string msg) => Logger.Log(msg);
 
-        public static void Error(Exception ex) => logger?.Error(ex.ToString());
-        public static void Error(string msg) => logger?.Error(msg);
-        public static UnityModManager.ModEntry.ModLogger logger;
-        public static bool enabled;
+        internal static void Error(Exception ex) => Logger?.Error(ex.ToString());
+        internal static void Error(string msg) => Logger?.Error(msg);
+        internal static UnityModManager.ModEntry.ModLogger Logger { get; private set; }
 
         public static bool Load(UnityModManager.ModEntry modEntry)
         {
             try
             {
-                logger = modEntry.Logger;
+                Logger = modEntry.Logger;
                 new Harmony(modEntry.Info.Id).PatchAll();
             }
             catch (Exception ex)
@@ -27,6 +26,7 @@ namespace SolastaExtendCharacterNames
                 Error(ex);
                 throw;
             }
+
             return true;
         }
     }
