@@ -1,9 +1,9 @@
 {
   "AssemblyName": "SolastaExtendCharacterNames.dll",
   "Author": "ImpPhil",
-  "DisplayName": "Solasta extend character naming",
+  "DisplayName": "Solasta extend character and dungeon naming",
   "EntryMethod": "SolastaExtendCharacterNames.Main.Load",
-  "GameVersion": "0.4.21",
+  "GameVersion": "0.5.42",
   "Id": "SolastaExtendCharacterNames",
   "ManagerVersion": "0.23.0",
   "Version": "1.1.0",
