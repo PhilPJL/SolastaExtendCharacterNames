@@ -38,6 +38,10 @@
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Install|AnyCPU'">
 	  <Optimize>true</Optimize>
 	</PropertyGroup>
+	
+	<ItemGroup>
+	  <Content Include="..\Repository.json" Link="Repository.json" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<Reference Include="Assembly-CSharp">
