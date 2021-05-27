@@ -3,10 +3,10 @@
   "Author": "ImpPhil",
   "DisplayName": "Solasta extend character and dungeon naming",
   "EntryMethod": "SolastaExtendCharacterNames.Main.Load",
-  "GameVersion": "0.5.42",
+  "GameVersion": "1.0.15",
   "Id": "SolastaExtendCharacterNames",
-  "ManagerVersion": "0.23.0",
-  "Version": "1.1.0",
+  "ManagerVersion": "0.23.3",
+  "Version": "1.2.0",
   "HomePage": "https://www.nexusmods.com/solastacrownofthemagister/mods/23",
   "Repository": "https://raw.githubusercontent.com/PhilPJL/SolastaExtendCharacterNames/master/Repository.json"
 }
